@@ -29,14 +29,14 @@ import dask
 import dask-ml
 import dask-labextension
 
-# -> dask.py
+# -> test_dask.py
 # done
 
 ####################
 
 ## Descartes: use Shapely or GeoJSON-like geometric objects as matplotlib paths and patches
 
-#-> descartes_shapely.py
+#-> test_descartes_shapely.py
 
 ####################
 
@@ -50,7 +50,7 @@ import geoalchemy2
 
 ## imblearn
 
-#-> imbalanced_sk.py
+#-> test_imbalanced_sk.py
 # done
 
 ####################
@@ -87,7 +87,7 @@ import laxpy
 
 ## lxml
 
-# -> lxml.py
+# -> test_lxml.py
 # done
 
 ####################
@@ -121,7 +121,7 @@ nx.add_path(G, [4, 2, 5])
 
 ## pdal:  for lidar data
 
-#-> pdal.py
+#-> test_pdal.py
 # done
 
 ####################
@@ -197,10 +197,8 @@ import qgis
 ## rasterio: access to geospatial raster data.
 
 import rasterio
-
-dataset = rasterio.open(rasterfile)
-print(dataset.name)
-dataset.close()
+with rasterio.open(rasterfile) as dataset:
+    print(dataset.name)
 
 # done
 
@@ -221,11 +219,11 @@ import rtree
 
 ## shapely: manipulation and analysis of geometric objects in the Cartesian plane.
 
-#-> descartes_shapely.py
+#-> test_descartes_shapely.py
 
 ## scikit: machine learning for Python and algorithms for image processing
 
-#-> imbalanced_sk.py
+#-> test_imbalanced_sk.py
 # done
 
 ## xarray: for multidimensional raster data.
