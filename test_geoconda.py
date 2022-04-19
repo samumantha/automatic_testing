@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 
-allas_bucket = ''
-rasterfile = ''
+allasbucket = 'gis_courses'
+rasterfile = '/appl/data/geo/landsat/lsm_19850715_sr_b1.tif'
 # raster and shape need to overlap
 vectorfile_shp = '/appl/data/geo/syke/asuinalueet1990/PientaloAlue90.shp'
 vectorfile_gpkg = '/appl/data/geo/mml/maastotietokanta/2020/gpkg/MTK-muut_20-02-06.gpkg'
 layer = "hylky"
 pointcloudfile = '/appl/data/geo/mml/laserkeilaus/2008_latest/2018/W444/1/W4444G4.laz'
-csvfile = ''
 
 ## ArcGIS: tools for sophisticated vector and raster analysis, geocoding, map making, routing and directions
 
@@ -277,7 +276,7 @@ print(gmt.__version__)
 import boto3
 print(boto3.__version__)
 s3 = boto3.client("s3", endpoint_url='https://a3s.fi')
-s3.list_objects_v2(Bucket='name_of_your_Allas_bucket')['Contents']
+s3.list_objects_v2(Bucket=allasbucket)['Contents']
 
 ####################
 
