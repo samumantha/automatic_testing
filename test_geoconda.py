@@ -12,6 +12,7 @@ csvfile = ''
 ## ArcGIS: tools for sophisticated vector and raster analysis, geocoding, map making, routing and directions
 
 import arcgis
+print(arcgis.__version__)
 # done
 
 ####################
@@ -29,6 +30,7 @@ import dask
 import dask-ml
 import dask-labextension
 
+print(dask.__version__)
 # -> test_dask.py
 # done
 
@@ -43,7 +45,7 @@ import dask-labextension
 ## Geoalchemy: working with spatial databases, primarily PostGIS
 
 import geoalchemy2
-
+print(geoalchemy2.__version__)
 #done
 
 ####################
@@ -58,7 +60,7 @@ import geoalchemy2
 ## geopandas: extends the datatypes used by pandas.
 
 import geopandas as gpd
-
+print(gpd.__version__)
 gpd.read_file(vectorfile_gpkg, layer=layer)
 #done
 
@@ -68,6 +70,7 @@ gpd.read_file(vectorfile_gpkg, layer=layer)
 
 import laspy
 
+print(laspy.__version__)
 #might need las?
 las = laspy.read(pointcloudfile)
 
@@ -81,6 +84,7 @@ new_file.points = las.points[las.classification == 1]
 ## laxpy 
 
 import laxpy
+print(laxpy.__version__)
 # done
 
 ####################
@@ -94,6 +98,7 @@ import laxpy
 
 ## natsort
 from natsort import natsorted, ns
+print(natsorted.__version__)
 a = ['2 ft 7 in', '1 ft 5 in', '10 ft 2 in', '2 ft 11 in', '7 ft 6 in']
 natsorted(a)
 #done
@@ -103,6 +108,7 @@ natsorted(a)
 ## netcdf
 
 import netcdf4
+print(netcdf4.__version__)
 #done
 
 ####################
@@ -111,6 +117,7 @@ import netcdf4
 
 import networkx as nx
 
+print(nx.__version__)
 G = nx.Graph()
 
 nx.add_path(G, [1, 2, 3])
@@ -129,6 +136,7 @@ nx.add_path(G, [4, 2, 5])
 ## cdo: scripting interface to climate data operator
 
 import cdo
+print(cdo.__version__)
 # done
 
 ####################
@@ -136,7 +144,7 @@ import cdo
 ## pyproj: performs cartographic transformations and geodetic computations.
 
 from pyproj import CRS
-
+print(CRS.__version__)
 CRS.from_epsg(4326)
 # done
 
@@ -145,7 +153,7 @@ CRS.from_epsg(4326)
 ## osmnx: download spatial geometries and construct, project, visualize, and analyze street networks from OpenStreetMap's APIs
 
 import osmnx as ox
-
+print(ox.__version__)
 # get the boundary polygon for manhattan, project it, and plot it
 city = ox.geocode_to_gdf("Manhattan, New York, USA")
 city_proj = ox.project_gdf(city)
@@ -157,7 +165,7 @@ city_proj = ox.project_gdf(city)
 ## pysal: spatial analysis functions. 
 
 import pysal as ps
-
+print(ps.__version__)
 ps.open(vectorfile_shp)
 #done
 
@@ -181,7 +189,7 @@ g.add_edges([(0,1), (1,2)])
 ## wget: download stuff
 
 import wget
-
+print(wget.__version__)
 #done
 
 ####################
@@ -189,7 +197,7 @@ import wget
 ## qgis: GIS applications
 
 import qgis
-
+print(qgis.__version__)
 # done
 
 ####################
@@ -197,6 +205,7 @@ import qgis
 ## rasterio: access to geospatial raster data.
 
 import rasterio
+print(rasterio.__version__)
 with rasterio.open(rasterfile) as dataset:
     print(dataset.name)
 
@@ -207,6 +216,7 @@ with rasterio.open(rasterfile) as dataset:
 ## rasterstats: summarizing geospatial raster datasets based on vector geometries.
 
 from rasterstats import zonal_stats
+print(zonal_stats.__version__)
 zonal_stats(vectorfile_shp, rasterfile,
             stats="count min mean max median")
 #done
@@ -216,7 +226,7 @@ zonal_stats(vectorfile_shp, rasterfile,
 ## rtree: spatial indexing and search.
 
 import rtree
-
+print(rtree.__version__)
 ## shapely: manipulation and analysis of geometric objects in the Cartesian plane.
 
 #-> test_descartes_shapely.py
@@ -229,41 +239,43 @@ import rtree
 ## xarray: for multidimensional raster data.
 
 import xarray
+print(xarray.__version__)
 
 ## sentinelsat:downloading Sentinel images
 
 import sentinelsat
+print(sentinelsat.__version__)
 
 ## joblib
 
 import joblib
-
+print(joblib.__version__)
 #-> https://github.com/csc-training/geocomputing/blob/master/python/puhti/04_parallel_joblib/joblib_example.py
 
 
 ## osgeo
 
 from osgeo import ogr
-
+print(ogr.__version__)
 data = ogr.Open(vectorfile_gpkg)
 
 ## fiona
 
 import fiona
-
+print(fiona.__version__)
 fiona.open(vectorfile_gpkg,layer=layer)
 
 
 ## gmt
 
 import gmt
-
+print(gmt.__version__)
 ####################
 
 ## Allas tools
 
 import boto3
-
+print(boto3.__version__)
 s3 = boto3.client("s3", endpoint_url='https://a3s.fi')
 s3.list_objects_v2(Bucket='name_of_your_Allas_bucket')['Contents']
 
@@ -271,3 +283,5 @@ s3.list_objects_v2(Bucket='name_of_your_Allas_bucket')['Contents']
 
 import python-keystoneclient
 import python-swiftclient
+print(python-keystoneclient.__version__)
+print(python-swiftclient.__version__)
